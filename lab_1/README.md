@@ -30,7 +30,7 @@ scanf("%f", &z);
 if (!x && !y && !z)
   return 0;
 
-if (x>y>z)
+if (x>y+z)
   printf("x: %f\n", x);
 else if (y>x+z)
   printf("y: %f\n", y);
