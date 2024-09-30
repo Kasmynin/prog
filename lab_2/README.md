@@ -3,8 +3,8 @@
 $$
 f(x)=
     \begin{cases}
-        e^sinx \text{,} & 0 \leq x \leq \frac{1}{4} \text{;} \\
-        e^x-frac{1}{\sqrt{x}} \text{,} & \frac{1}{4} < x \leq \frac{1}{2} \text{.}
+        e^{sinx} \text{,} & 0 \leq x \leq \frac{1}{4} \text{;} \\
+        e^x - frac{1}{\sqrt{x}} \text{,} & \frac{1}{4} < x \leq \frac{1}{2} \text{.}
     \end{cases}
 $$
 ## Задания
