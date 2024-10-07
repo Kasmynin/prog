@@ -43,7 +43,7 @@ int main()
         x = x + h;
     } while (x <= 0.5);
 
-    return o;
+    return 0;
 }
 ```
 2. программа написана с помощью цикла for
