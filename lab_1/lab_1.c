@@ -9,10 +9,17 @@ int main()
   scanf("%f", &y);
   printf("введи z -> ");
   scanf("%f", &z);
+<<<<<<< HEAD
   
   if (!x && !y && !z)
     return 0;
 
+=======
+
+  if (!x && !y && !z)
+    return 0;
+
+>>>>>>> 2483149 (m)
   float max = x;
   if (y > max)
     max = y;
