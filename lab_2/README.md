@@ -39,8 +39,8 @@ int main()
     printf("введите шаг h -> ");
     scanf("%f", &h);
     do {
-        printf("%f", x); 
-        printf("%f", f(x, h));
+        printf("%f ", x); 
+        printf("%f\n", f(x, h));
         x = x + h;
     } while (x <= 0.5);
 
