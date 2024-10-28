@@ -6,7 +6,7 @@
 ## Решение
 ### 00
 Составить словарь словарей расстояний между городами
-![screenshots](https://github.com/{Kasmynin}/{prog}/raw/{lab_4}/{screenshots}/L4_00.png)
+![screenshots](https://github.com/{Kasmynin}/{prog}/raw/{lab_4}/{lab_4/screenshots/L4_00.png}/L4_00.png)
 ### 01
 Вывести на консоль значение прощади круга с точностю до 4-х знаков после запятой
 
