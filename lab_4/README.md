@@ -40,11 +40,11 @@
 ### 06
 распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean' в формате: три песни звучат ХХХ.XX минут
 распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress': а другие три песни звучат ХХХ минут
-![screenshots](screenshots
+![screenshots](screenshots/L4_06.png)
 
 ### 07
 Нужно расшифровать и вывести на консоль шифр в удобочитаемом виде
-![screenshots](screenshots
+![screenshots](screenshots/L4_07.png)
 
 ### 08
 Создайте множество цветов, произрастающих в саду и на лугу
