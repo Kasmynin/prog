@@ -21,3 +21,19 @@ birds = ['rooster', 'ostrich', 'lark', ]
 # выведите на консоль в какой клетке сидит лев (lion) и жаворонок (lark).
 # Номера при выводе должны быть понятны простому человеку, не программисту.
 # TODO здесь ваш код
+```
+zoo = ['lion', 'kangaroo', 'elephant', 'monkey', ]
+
+zoo.insert(1, 'bear')
+print(zoo)
+
+birds = ['rooster', 'ostrich', 'lark', ]
+zoo.extend(birds)
+print(zoo)
+
+zoo.remove('elephant')
+print(zoo)
+
+print('Лев сидит в клетке номер 1.')
+print('Жаворонок сидит в клетке номер 7.')
+```
