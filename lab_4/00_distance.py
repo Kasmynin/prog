@@ -17,7 +17,7 @@ distances = {}
 # TODO здесь заполнение словаря
 
 print(distances)
-```p
+```
 sites = {
     'Moscow': (550, 370),
     'London': (510, 510),
