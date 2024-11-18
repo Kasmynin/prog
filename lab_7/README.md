@@ -43,4 +43,7 @@ def sum_nested_iterative(nested_list):
 print(sum_nested_iterative([1, [2, [3, 4, [5]]]]))
 ```
 ### Задание 2
-Функция для расчёта a(k) = \frac{1}{2} \left( \sqrt{b(k-1)} + \frac{1}{2} \sqrt{a(k-1)} \right)
+Функция для расчёта 
+$$
+a(k) = \frac{1}{2} \left( \sqrt{b(k-1)} + \frac{1}{2} \sqrt{a(k-1)} \right)
+$$
