@@ -20,3 +20,37 @@
 ![screenshots](screeens/Figure_5_3_2.png)
 ## График (2 вариант)
 $f(x)=e^{sinx}$
+```py
+import numpy as np
+import matplotlib.pyplot as plt
+from math import *
+
+# задал верхнюю часть функции из варианта 3
+def f(x):
+    return e**sin(x)
+
+# создал список точек от -3 до 3 (1000 точек)
+x = np.linspace(-3, 3, 1000)
+# список точек функции из варианта
+y1 = [f(i) for i in x]
+# касательная в точке 0  (исправлено!)
+y2 = x + 1
+
+# заголовок
+plt.title('Лабораторная работа 5, вариант 2')
+# название осей
+plt.xlabel('x')
+plt.ylabel('y')
+# включение сетки
+plt.grid()
+# построение этих функций
+plt.plot(x, y1, label='e**sin(x)')
+plt.plot(x, y2, 'r', label='Касательная')
+# аннотация
+plt.text(0, 0.5, 'точка касания') #Приблизительно
+# легенда
+plt.legend()
+# вывести график
+plt.show()
+```
+![screenshots](screeens/Figure_5_4_.png)
