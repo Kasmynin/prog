@@ -18,3 +18,4 @@
 ### урок 3
 ![screenshots](screeens/Figure_5_3_1.png)
 ![screenshots](screeens/Figure_5_3_2.png)
+## График (2 вариант)
