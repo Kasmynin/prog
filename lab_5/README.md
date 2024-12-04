@@ -15,6 +15,7 @@
 ### урок 1
 ![screenshots](screeens/Figure_5_1.png)
 ### урок 2
-![screenshots](screenshots/L4_03.png)
+![screenshots](screeens/Figure_5_2.png)
 ### урок 3
-![screenshots](screenshots/L4_03.png)
+![screenshots](screeens/Figure_5_3_1.png)
+![screenshots](screeens/Figure_5_3_2.png)
