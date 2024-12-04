@@ -1,0 +1,21 @@
+```py
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Линейная зависимость
+x = np.linspace(0, 10, 50)
+y1 = x
+# Квадратичная зависимость
+y2 = x**2
+
+# Построение графиков
+plt.figure(figsize=(9, 6))
+plt.plot(x, y1, label='y1 = x')  # Построение линейной зависимости
+plt.plot(x, y2, label='y2 = x^2')  # Построение квадратичной зависимости
+plt.title('Зависимости: y1 = x, y2 = x^2')  # Заголовок
+plt.xlabel('x', fontsize=14)  # Подпись оси x
+plt.ylabel('y', fontsize=14)  # Подпись оси y
+plt.grid(True)  # Сетка
+plt.legend()  # Добавлена легенды для различия кривых
+plt.show()
+```
