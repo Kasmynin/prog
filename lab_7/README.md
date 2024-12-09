@@ -46,3 +46,47 @@ print(sum_nested_iterative([1, [2, [3, 4, [5]]]]))
 Функция для расчёта 
 $a_k = \frac{1}{2} \left( \sqrt{b_{k-1}} + \frac{1}{2} \sqrt{a_{k-1}} \right)$
 $a_1 = b_1 = 1$
+#### С рекурсией 
+```py
+def calculate_a(k, a_prev, b_prev):
+    if k == 1:
+        return 1
+    else:
+        return (1/2) * ((b_prev**(1/2))+(1/2) * (a_prev**(1/2)))
+print("Введите k")
+k = int(input())
+print("Введите a")
+a_prev = int(input())
+print("Введите b")
+b_prev = int(input())
+
+ak = calculate_a(k, a_prev, b_prev)
+print(f"a{k} = {ak}")
+```
+я не до конца понимаю как это нужно реализовать, ведь функции b_k не имеется, я не знаю как менятеся b
+#### Без рекурсии
+```py
+def calculate_a(k, a_prev, b_prev):
+    if k == 1:
+        return 1
+    else:
+        a = a_prev
+        b = b_prev
+        for i in range(2, k + 1):
+            a_next = (1/2) * ((b**(1/2)) + (1/2) * (a**(1/2)))
+            b = a
+            a = a_next
+        return a
+
+print("Введите k")
+k = int(input())
+print("Введите a_1")  
+a_prev = int(input())
+print("Введите b_1") 
+b_prev = int(input()) 
+
+
+ak = calculate_a(k, a_prev, b_prev)
+print(f"a{k} = {ak}")
+```
+я окончательно запутался в этом
