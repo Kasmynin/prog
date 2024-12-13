@@ -49,3 +49,29 @@ if __name__ == "__main__":
 ```
 ### Задача 2
 Декоратор, ограничивающий частоту вызовов функций
+```py
+import time
+
+def rate_limit(seconds):
+  last_call = 0
+
+  def decorator(func):
+    def wrapper(*args, **kwargs):
+      nonlocal last_call
+      current_time = time.time()
+      if current_time - last_call >= seconds:
+        last_call = current_time
+        return func(*args, **kwargs)
+      return None # или raise Exception("Too many calls")
+
+    return wrapper
+  return decorator
+
+@rate_limit(seconds=1)
+def my_function():
+    print("Функция вызвана!")
+
+for i in range(5):
+    my_function()
+    time.sleep(0.5)
+```
