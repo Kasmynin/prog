@@ -47,7 +47,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-![screenshots](lab_8/screenshots/Снимок_экрана_2024-12-13_200519.png)
+![screenshots](screenshots/L8_1.png)
 ### Задача 2
 Декоратор, ограничивающий частоту вызовов функций
 ```py
@@ -76,4 +76,4 @@ for i in range(5):
     my_function()
     time.sleep(0.5)
 ```
-![screenshots](screeenshots/Figure_5_1.png)
+![screenshots](screeenshots/L8_2.png)
