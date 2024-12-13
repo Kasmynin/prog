@@ -76,4 +76,4 @@ for i in range(5):
     my_function()
     time.sleep(0.5)
 ```
-![screenshots](screeenshots/L8_2.png)
+![screenshots](screenshots/L8_2.png)
