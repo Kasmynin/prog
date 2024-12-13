@@ -47,7 +47,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-![screenshots](screeenshots/Снимок экрана 2024-12-13 200519.png)
+![screenshots](lab_8/screenshots/Снимок_экрана_2024-12-13_200519.png)
 ### Задача 2
 Декоратор, ограничивающий частоту вызовов функций
 ```py
