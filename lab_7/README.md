@@ -42,6 +42,8 @@ def sum_nested_iterative(nested_list):
 
 print(sum_nested_iterative([1, [2, [3, 4, [5]]]]))
 ```
+![screenshots](screenshots/L7.png)
+вывод один и тот же
 ### Задание 2
 Функция для расчёта 
 $a_k = \frac{1}{2} \left( \sqrt{b_{k-1}} + \frac{1}{2} \sqrt{a_{k-1}} \right)$
