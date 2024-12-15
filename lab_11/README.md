@@ -48,7 +48,6 @@ class MemeGeneratorApp:
             return ["Текст не найден"]
         
     def generate_meme(self):
-         # Clear previous image
         if self.current_image:
             self.image_label.config(image="")
             self.current_image = None
