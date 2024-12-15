@@ -17,7 +17,7 @@ def line_generator(filename, max_length):
 for line in line_generator("my_file.txt", 20):
     print(line)
 ```
-немного переделал для конкреного примера
+немного переделал для конкретного примера
 ```py
 def line_generator(filename, max_length):
     try:
