@@ -27,7 +27,7 @@ with open("my_file.txt", "w", encoding="utf-8") as f:
 
 def line_generator(filename, max_length):
     try:
-        with open(filename, 'r', encoding="utf-8") as f: # Используем utf-8
+        with open(filename, 'r', encoding="utf-8") as f: 
             for line in f:
                 yield line[:max_length]
     except FileNotFoundError:
