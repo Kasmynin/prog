@@ -72,7 +72,6 @@ class MemeGeneratorApp:
              draw = ImageDraw.Draw(image)
              width, height = image.size
            
-             # Размещаем верхний текст
              bbox_top = draw.textbbox((0, 0), top_text, font=self.font)
              text_width_top = bbox_top[2] - bbox_top[0]
              text_height_top = bbox_top[3] - bbox_top[1]
@@ -80,7 +79,6 @@ class MemeGeneratorApp:
              y = 10
              draw.text((x, y), top_text, fill=(255, 255, 255), font=self.font)
 
-            # Размещаем нижний текст
              bbox_bottom = draw.textbbox((0, 0), bottom_text, font=self.font)
              text_width_bottom = bbox_bottom[2] - bbox_bottom[0]
              text_height_bottom = bbox_bottom[3] - bbox_bottom[1]
