@@ -64,26 +64,13 @@ print("результат: ", result)
 ```
 #### Без рекурсии
 ```py
-def calculate_a(k, a_prev, b_prev):
-    if k == 1:
-        return 1
-    else:
-        a = a_prev
-        b = b_prev
-        for i in range(2, k + 1):
-            a_next = (1/2) * ((b**(1/2)) + (1/2) * (a**(1/2)))
-            b = a
-            a = a_next
-        return a
-
-print("Введите k")
-k = int(input())
-print("Введите a_1")  
-a_prev = int(input())
-print("Введите b_1") 
-b_prev = int(input()) 
-
-
-ak = calculate_a(k, a_prev, b_prev)
-print(f"a{k} = {ak}")
+def calculate_x(i):
+    x = 1 
+    for i in range(1, i):
+        x = (x + 1) / (x + 2)
+    return x
+print("введите i")
+i = int(input())
+result = calculate_x(i)
+print("результат: ", result)
 ```
