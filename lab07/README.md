@@ -46,8 +46,8 @@ print(sum_nested_iterative([1, [2, [3, 4, [5]]]]))
 вывод один и тот же
 ### Задание 2
 Функция для расчёта 
-$a_k = \frac{1}{2} \left( \sqrt{b_{k-1}} + \frac{1}{2} \sqrt{a_{k-1}} \right)$
-$a_1 = b_1 = 1$
+$x_i = \frac{x_{i-1} + 1}{x_{i-1} + 2}$
+$x_0 = 1$
 #### С рекурсией 
 ```py
 def calculate_a(k, a_prev, b_prev):
