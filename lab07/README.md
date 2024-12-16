@@ -78,3 +78,4 @@ i = int(input())
 result = calculate_x(i)
 print("результат: ", result)
 ```
+![screenshots](Lab7.png)
