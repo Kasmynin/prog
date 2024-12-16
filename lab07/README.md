@@ -50,22 +50,18 @@ $x_i = \frac{x_{i-1} + 1}{x_{i-1} + 2}$
 $x_0 = 1$
 #### С рекурсией 
 ```py
-def calculate_a(k, a_prev, b_prev):
-    if k == 1:
+def calculate_x(x, i):
+    if i == 0:
         return 1
     else:
-        return (1/2) * ((b_prev**(1/2))+(1/2) * (a_prev**(1/2)))
-print("Введите k")
-k = int(input())
-print("Введите a")
-a_prev = int(input())
-print("Введите b")
-b_prev = int(input())
-
-ak = calculate_a(k, a_prev, b_prev)
-print(f"a{k} = {ak}")
+        prev_x = calculate_x(x, i-1)
+        return (prev_x+1)/(prev_x+2)
+x0 = 1 
+print("введите i")
+i = int(input())
+result = calculate_x(x0, i)
+print("результат: ", result)
 ```
-я не до конца понимаю как это нужно реализовать, ведь функции b_k не имеется, я не знаю как менятеся b
 #### Без рекурсии
 ```py
 def calculate_a(k, a_prev, b_prev):
@@ -91,4 +87,3 @@ b_prev = int(input())
 ak = calculate_a(k, a_prev, b_prev)
 print(f"a{k} = {ak}")
 ```
-я окончательно запутался в этом
