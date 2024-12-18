@@ -115,3 +115,4 @@ def lab9(n: int = typer.Option(help = "n number")):
 if __name__ == "__main__":
     app()
 ```
+![screenshots](L10.png)
