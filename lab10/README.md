@@ -94,7 +94,6 @@ app = typer.Typer()
 
 @app.command()
 def lab7(data: str = typer.Option(help="Data list or tuple")):
-    """Вызов функции unpack из lab7"""
     try:
         args = eval(data)
     except (NameError, SyntaxError):
@@ -105,14 +104,12 @@ def lab7(data: str = typer.Option(help="Data list or tuple")):
 
 @app.command()
 def lab8(filename: str = typer.Option(help="Path to file"), max_length: int = typer.Option(20, help="Max length of string")):
-    """Вызов функции line из lab8"""
     generator = lab8_10.line(max_length)
     for line in generator(filename):
          print(line, end="")
 
 @app.command()
 def lab9(n: int = typer.Option(help = "n number")):
-    """Вызов функции f из lab9"""
     print(lab9_10.f(n))
 
 if __name__ == "__main__":
