@@ -109,3 +109,4 @@ if __name__ == "__main__":
     app = ClothingCalculatorApp(root)
     root.mainloop()
 ```
+![screenshots](clothes.png)
