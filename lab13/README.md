@@ -1,4 +1,4 @@
-# Лабораторная работа 12
+# Лабораторная работа 13
 ## Задания 
 Перепишите свой вариант лабораторной работы №12 с использованием классов и объектов.
 
@@ -213,3 +213,10 @@ class ClothingCalculatorApp(App):
 if __name__ == "__main__":
     ClothingCalculatorApp().run()
 ```
+![screenshots](lab13_menu.png)
+
+![screenshots](lab13_res.png)
+
+![screenshots](lab13_save.png)
+
+![screenshots](lab13_general.png)
