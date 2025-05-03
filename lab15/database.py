@@ -1,14 +1,11 @@
 import sqlite3
-import parser  # Импортируем parser.py как модуль
+import parser
 
 db_file = "galaxies.db"
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
 
 def create_tables(conn):
-    """
-    Создает таблицы в базе данных.
-    """
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -49,14 +46,12 @@ def populate_database(conn, galaxies):
     """
     cursor = conn.cursor()
 
-    # Заполняем таблицу TIP (заглушка - вам нужно продумать, как соотносить типы)
-    tipi = set(g['type'] for g in galaxies)  #Уникальные типы
+    tipi = set(g['type'] for g in galaxies)  
     for tip in tipi:
-        cursor.execute("INSERT OR IGNORE INTO TIP (name) VALUES (?)", (tip,)) #Игнорируем повторы
+        cursor.execute("INSERT OR IGNORE INTO TIP (name) VALUES (?)", (tip,)) 
 
-    # Заполняем таблицу GRUPPA (заглушка, нужно доработать)
     cursor.execute("INSERT OR IGNORE INTO GRUPPA (name, description) VALUES (?, ?)", ('Местная группа', 'Группа галактик, включающая Млечный Путь'))
-    id_gruppi = 1 #Предполагаем, что "Местная группа" имеет ID 1
+    id_gruppi = 1 
 
     for galaxy in galaxies:
         try:
@@ -103,18 +98,14 @@ def galaxies_grouped_by_group(conn):
     cursor.execute(query)
     return cursor.fetchall()
 
-# Парсим данные с помощью функции из parser.py
 galaxies_data = parser.parse_galaxies("https://ru.wikipedia.org/wiki/Список_ближайших_галактик")
 
-# Создание таблиц
 create_tables(conn)
 
-# Заполнение базы данных
 populate_database(conn, galaxies_data)
 
 print("База данных успешно создана и заполнена!")
 
-# Пример использования запросов:
 print("Топ 5 ближайших галактик:")
 for row in top_n_galaxies(conn, 5, "distance"):
     print(row)
