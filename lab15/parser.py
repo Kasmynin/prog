@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import re
 
 def parse_galaxies(url):
-    """Извлекает данные о галактиках со страницы Википедии."""
     response = requests.get(url)
     response.raise_for_status()
 
@@ -45,7 +44,6 @@ def parse_galaxies(url):
     return galaxies
 
 if __name__ == '__main__':
-    # Пример использования (можно убрать, если запускаете database.py)
     url = "https://ru.wikipedia.org/wiki/Список_ближайших_галактик"
     galaxies_data = parse_galaxies(url)
     for galaxy in galaxies_data[:5]:
