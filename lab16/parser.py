@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.options import Options
 import re
 
 def parse_books(url, driver):
-    """Парсит данные о книгах с сайта."""
     try:
         driver.get(url)
         books = []
@@ -17,15 +16,14 @@ def parse_books(url, driver):
                 book_url = title_element.get_attribute("href")
 
                 price_element = book_element.find_element(By.CLASS_NAME, "price_color")
-                # Используем регулярное выражение для извлечения цены
                 price_text = price_element.text
-                price_match = re.search(r'£(\d+\.\d+)', price_text)  # Ищем "£" и затем число
+                price_match = re.search(r'£(\d+\.\d+)', price_text)  
                 if price_match:
-                    price_str = price_match.group(1) # Извлекаем только числовую часть
+                    price_str = price_match.group(1) 
                     price = float(price_str)
                 else:
                     print(f"Не удалось извлечь цену из текста: {price_text}")
-                    continue # Пропускаем книгу, если не удалось извлечь цену
+                    continue 
 
 
                 rating_element = book_element.find_element(By.CLASS_NAME, "star-rating")
@@ -57,7 +55,6 @@ def parse_books(url, driver):
         return []
 
 def get_all_books(base_url, driver):
-    """Собирает данные о всех книгах с нескольких страниц."""
     all_books = []
     page_num = 1
     while True:
@@ -65,15 +62,14 @@ def get_all_books(base_url, driver):
         print(f"Парсинг страницы: {url}")
         books = parse_books(url, driver)
         if not books:
-            break  # Если нет книг, то закончили
+            break  
         all_books.extend(books)
         page_num += 1
     return all_books
 
 if __name__ == '__main__':
-    # Настройка Selenium (только для проверки парсера)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")  # Запуск в фоновом режиме
+    chrome_options.add_argument("--headless")  
     driver = webdriver.Chrome(options=chrome_options)
 
     base_url = "https://books.toscrape.com"
