@@ -1,12 +1,10 @@
 import sqlite3
 
 def create_tables(db_name):
-    """Создает таблицы в базе данных."""
     try:
         conn = sqlite3.connect(db_name)
         cursor = conn.cursor()
 
-        # Создание таблицы Категория
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Категория (
                 CategoryID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,7 +12,6 @@ def create_tables(db_name):
             )
         ''')
 
-        # Создание таблицы Книга
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Книга (
                 BookID INTEGER PRIMARY KEY AUTOINCREMENT,
