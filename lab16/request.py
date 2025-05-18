@@ -3,12 +3,10 @@ from pypika import Query, Table, Field
 from pypika.functions import Avg, Count, Max, Min
 
 def execute_pypika_queries(db_name):
-    """Выполняет запросы к базе данных с использованием PyPika."""
     try:
         conn = sqlite3.connect(db_name)
         cursor = conn.cursor()
 
-        # Определяем таблицы
         book = Table("Книга")
         category = Table("Категория")
 
