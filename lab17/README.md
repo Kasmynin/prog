@@ -21,4 +21,5 @@
 
 ## Результат
 ![screenshots](L17_models.png)
-![screenshots](L17_request.png)
+![screenshots](L17_request1.png)
+![screenshots](L17_request2.png)
