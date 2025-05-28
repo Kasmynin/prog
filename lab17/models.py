@@ -4,17 +4,15 @@ from datetime import date
 
 Base = declarative_base()
 
-# Association Table for Tour and Country (Many-to-Many)
 tour_country = Table('tour_country', Base.metadata,
     Column('tour_id', Integer, ForeignKey('tour.tour_id'), primary_key=True),
     Column('country_id', Integer, ForeignKey('country.country_id'), primary_key=True)
 )
 
-# Association Table for Client and Tour (Many-to-Many)
 client_tour = Table('client_tour', Base.metadata,
     Column('client_id', Integer, ForeignKey('client.client_id'), primary_key=True),
     Column('tour_id', Integer, ForeignKey('tour.tour_id'), primary_key=True),
-    Column('booking_date', Date)  # Add a booking date
+    Column('booking_date', Date) 
 )
 
 
@@ -60,41 +58,33 @@ class Country(Base):
         return f"<Country(name='{self.country_name}')>"
 
 
-# Database engine setup
 engine = create_engine('sqlite:///travel.db', echo=True)
 Base.metadata.create_all(engine)
 
-# Session setup
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# Create some clients
 client1 = Client(name="Alice Smith", email="alice@example.com", phone_number="123-456-7890")
 client2 = Client(name="Bob Johnson", email="bob@example.com", phone_number="098-765-4321")
 client3 = Client(name="Charlie Brown", email="charlie@example.com", phone_number="111-222-3333")
 
-# Create some countries
 country1 = Country(country_name="France")
 country2 = Country(country_name="Italy")
 country3 = Country(country_name="Spain")
 
-# Create some tours
 tour1 = Tour(tour_name="Romantic Paris", start_date=date(2024, 1, 15), end_date=date(2024, 1, 22), price=1500.00)
 tour2 = Tour(tour_name="Italian Adventure", start_date=date(2024, 2, 1), end_date=date(2024, 2, 10), price=1800.00)
 tour3 = Tour(tour_name="Spanish Fiesta", start_date=date(2024, 3, 10), end_date=date(2024, 3, 17), price=1200.00)
 tour4 = Tour(tour_name="European Getaway", start_date=date(2024, 4, 1), end_date=date(2024, 4, 15), price=2500.00)
 
-# Associate tours with countries
 tour1.countries = [country1]
 tour2.countries = [country2]
 tour3.countries = [country3]
 tour4.countries = [country1, country2, country3]
 
-# Add everything to the session *before* flushing to get IDs
 session.add_all([client1, client2, client3, country1, country2, country3, tour1, tour2, tour3, tour4])
-session.commit() # Commit the session *once* here.
+session.commit() 
 
-# Associate clients with tours and booking dates
 session.execute(client_tour.insert().values(client_id=client1.client_id, tour_id=tour1.tour_id, booking_date=date(2023, 12, 10)))
 session.execute(client_tour.insert().values(client_id=client1.client_id, tour_id=tour2.tour_id, booking_date=date(2023, 12, 15)))
 session.execute(client_tour.insert().values(client_id=client2.client_id, tour_id=tour2.tour_id, booking_date=date(2023, 11, 20)))
@@ -102,9 +92,8 @@ session.execute(client_tour.insert().values(client_id=client2.client_id, tour_id
 session.execute(client_tour.insert().values(client_id=client3.client_id, tour_id=tour1.tour_id, booking_date=date(2023, 10, 5)))
 session.execute(client_tour.insert().values(client_id=client3.client_id, tour_id=tour4.tour_id, booking_date=date(2023, 10, 10)))
 
-session.commit()  # Commit the session *again* after inserting into the association table
+session.commit() 
 
-#Example query
 clients = session.query(Client).all()
 print("All Clients:")
 for client in clients:
